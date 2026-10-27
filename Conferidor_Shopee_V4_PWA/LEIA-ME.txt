@@ -1,21 +1,20 @@
-BIPADOR UNIVERSAL V28 — COR PRINCIPAL E OUTRAS VARIAÇÕES
+BIPADOR UNIVERSAL V29 — COR PRETO E CONFERÊNCIA MANUAL DE TAMANHO
 
-Envie para a MESMA pasta do GitHub: index.html, sw.js, manifest.webmanifest, icon.svg, logo-multiplo-mix.png.
-O CSV e este LEIA-ME.txt não precisam ser enviados ao GitHub.
+Envie os cinco arquivos para a pasta que já hospeda o aplicativo no GitHub Pages:
+index.html, sw.js, manifest.webmanifest, icon.svg, logo-multiplo-mix.png.
 
-CADASTRO EXEMPLO (sem EAN fictício):
-EAN: [EAN real lido da embalagem]
-SKU: WJ-2670
-Produto: Touca de Natação
-Cor: (deixe em branco)
-Tamanho: ADULTO
-Variacoes: PRETO, VERMELHO, PRATA
+CORREÇÃO: no cadastro mostrado no print estava escrito "Prero" em vez de "Preto".
+A V29 corrige ESSE erro específico em Cor ou Outras cores, preservando
+uma cópia do catálogo anterior em armazenamento local. Também normaliza
+a grafia se voltar a ser digitada desse modo.
 
-Ao ler EAN, o app reconhece WJ-2670 e apresenta as variações. Só contabiliza se a variação selecionada corresponder ao SKU completo do pedido.
-Atenção: cadastrar uma variação que inclui tamanho exige o preenchimento do tamanho correto.
-Para produtos com QR de SKU completo, a conferência continua automática e exata.
+Se o cadastro tiver SKU base WJ-2670 e cores PRETO/PRATA/AZUL/ROSA, mas
+o tamanho estiver vazio, o programa apresenta o tamanho conhecido da
+etiqueta para CONFIRMAÇÃO VISUAL (ex.: PRETO · ADULTO). Ele NÃO declara
+que o EAN comprovou a cor ou o tamanho; a pessoa tem que conferir ambos.
 
-IMPORTANTE: faça backup do catálogo antes de apagar dados do Safari. A V28 não migra dados para servidor.
+Se houver variação sem associação, o app alerta e NÃO contabiliza.
+QR Code do SKU completo continua sendo validado diretamente.
 
-CORREÇÃO V28: a cor informada em Cor e as cores informadas em Outras cores aparecem JUNTAS na escolha visual, sem repetições. Exemplo: Cor=PRETO; Outras cores=PRATA, ROSA, AZUL.
-O campo Tamanho continua obrigatório se ele compõe o SKU completo da etiqueta (como ADULTO). Corrija eventuais erros de digitação nas variações (ex.: PRERO deve ser PRETO).
+CUIDADO: não apague os dados do Safari! Faça backup dos EANs no aplicativo.
+Testar no iPhone antes de liberar na bancada.

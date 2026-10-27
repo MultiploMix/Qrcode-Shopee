@@ -118,7 +118,7 @@ button:focus-visible{outline:3px solid #234;outline-offset:2px}
 .catalog-entry:last-child{border-bottom:0}.catalog-entry div{min-width:0;overflow-wrap:anywhere}
 .catalog-entry strong{display:block;font-size:13px;color:#25344b}.catalog-entry small{display:block;font-size:12px;margin-top:3px;color:#69717e}
 .catalog-entry button{flex:none;width:auto;padding:8px 10px;font-size:12px;margin:0}.catalog-actions{display:flex;gap:8px;flex:none}.catalog-entry .btn-edit{background:#2f6fdd}.catalog-entry .btn-del{background:#a62a35}
-.catalog-tag{display:inline-block;background:#fff1dc;color:#7d5100;font-size:11px;padding:2px 6px;border-radius:6px;font-weight:700}
+.catalog-correction{background:#eaf6ef;color:#155f38;border:1px solid #9ccbb2;border-radius:9px;padding:10px;font-size:13px;font-weight:700;margin-bottom:10px}.catalog-alert{background:#fff0e9;color:#993412;border:1px solid #f5b79c;border-radius:9px;padding:10px;font-size:13px;font-weight:700;margin:10px 0}.catalog-tag{display:inline-block;background:#fff1dc;color:#7d5100;font-size:11px;padding:2px 6px;border-radius:6px;font-weight:700}
 .ean-review{z-index:11000}.ean-review-sheet{background:white;width:min(430px,100%);border-radius:19px;padding:22px;max-height:92dvh;overflow:auto;box-shadow:0 15px 55px #0005}
 .ean-review-sheet h2{font-size:22px;margin:10px 0}.ean-review-badge{font-size:12px;color:#a46409;background:#fff3df;padding:7px 10px;border-radius:10px;font-weight:800;display:inline-block}
 .ean-expected{background:#f2f5f9;border-radius:11px;padding:13px;overflow-wrap:anywhere}.ean-expected small{color:#69717e;display:block;margin-bottom:6px}.ean-expected strong{font-size:19px}
@@ -127,7 +127,7 @@ button:focus-visible{outline:3px solid #234;outline-offset:2px}
 .ean-choice>span{display:block;min-width:0;font-size:18px;line-height:1.24;color:#1e2b40;letter-spacing:.1px}
 .ean-choice small{font-size:12px!important;font-weight:450!important;color:#647084!important;line-height:1.45!important}
 .ean-wrong{background:#fff6f6;border-color:#f3cdcd}.ean-wrong>span{font-size:15px;color:#a12b33}
-</style></head><body><div id="scanVisual" class="hidden" role="status" aria-live="assertive"><div class="result"><div class="symbol" id="scanSymbol"></div><div class="status" id="scanStatus"></div><div class="detail" id="scanDetail"></div></div></div><header><div class="brand-head"><img src="logo-multiplo-mix.png" alt="Logo Múltiplo Mix Importados"><div>Bipador Universal<small>Conferência inteligente de pedidos</small><span class="app-version">V28</span></div></div></header><main><section id="identification" class="card"><h2>Identificação da conferência</h2><p class="form-sub">Preencha todos os campos para acessar o leitor de QR Code.</p><form id="identForm"><label class="form-label" for="operatorName">Nome</label><input id="operatorName" autocomplete="name" maxlength="100" placeholder="Nome do funcionário" required><label class="form-label">Data e hora</label><div class="notice" id="automaticDateTime" aria-live="polite"></div><small>Preenchidas automaticamente pelo horário do iPhone ao iniciar.</small><label class="form-label" for="accountName">Conta</label><input id="accountName" list="accounts" maxlength="100" placeholder="Selecione ou digite a conta" required><datalist id="accounts"></datalist><label class="form-label" for="listName">Lista</label><input id="listName" maxlength="120" placeholder="Identificação da lista" required><button type="submit">Iniciar conferência →</button></form><button class="secondary" id="openCatalogBefore" type="button">▤ Gerenciar EANs e SKUs</button><small>Identificação registrada somente neste iPhone. Nome, Conta e Lista são obrigatórios; data e hora são automáticas.</small></section><div id="workspace" class="hidden"><div id="quickStatus" class="quick-status" role="status" aria-live="polite"></div><div class="flowbar" aria-label="Etapas da conferência"><span id="stepList">Lista</span><span id="stepOrder">Etiqueta</span><span id="stepProduct">Produto</span><span id="stepDone">Concluído</span></div><section class="card"><h2>1. Etiqueta do pedido</h2><button id="scanOrder">📷 Ler QR Code da etiqueta</button><details><summary>Inserir código manualmente (teste)</summary><textarea id="rawOrder" placeholder="P:...\nSku:...;Q:1"></textarea><button class="secondary" id="loadOrder">Carregar etiqueta</button></details><div id="orderInfo" class="notice">Aguardando leitura da etiqueta.</div><div id="orderProgress" class="order-progress hidden"><div class="order-progress-top"><strong id="orderProgressText">0 de 0 itens</strong><span id="orderProgressPercent">0%</span></div><div class="progress-track"><div class="progress-fill" id="orderProgressFill"></div></div></div><div id="items"></div></section><section class="card"><h2>2. Conferência do produto</h2><button id="scanProduct" disabled>📷 Ler QR Code ou EAN do produto</button><details><summary>Digitar SKU ou EAN manualmente (teste)</summary><input id="skuInput" placeholder="SKU ou EAN do produto" inputmode="text"><button class="secondary" id="checkSku">Conferir código</button></details><div id="feedback" class="notice" role="status" aria-live="polite">Primeiro leia a etiqueta do pedido.</div><button id="nextOrder" class="hidden" type="button">✅ Pedido completo — Ir para o próximo pedido?</button><button id="finishList" type="button">🏁 Finalizar conferência da lista</button><button class="secondary" id="reset">Descartar pedido atual</button></section><section id="cameraPanel" class="card hidden" aria-label="Leitor de QR Code">
+</style></head><body><div id="scanVisual" class="hidden" role="status" aria-live="assertive"><div class="result"><div class="symbol" id="scanSymbol"></div><div class="status" id="scanStatus"></div><div class="detail" id="scanDetail"></div></div></div><header><div class="brand-head"><img src="logo-multiplo-mix.png" alt="Logo Múltiplo Mix Importados"><div>Bipador Universal<small>Conferência inteligente de pedidos</small><span class="app-version">V29</span></div></div></header><main><section id="identification" class="card"><h2>Identificação da conferência</h2><p class="form-sub">Preencha todos os campos para acessar o leitor de QR Code.</p><form id="identForm"><label class="form-label" for="operatorName">Nome</label><input id="operatorName" autocomplete="name" maxlength="100" placeholder="Nome do funcionário" required><label class="form-label">Data e hora</label><div class="notice" id="automaticDateTime" aria-live="polite"></div><small>Preenchidas automaticamente pelo horário do iPhone ao iniciar.</small><label class="form-label" for="accountName">Conta</label><input id="accountName" list="accounts" maxlength="100" placeholder="Selecione ou digite a conta" required><datalist id="accounts"></datalist><label class="form-label" for="listName">Lista</label><input id="listName" maxlength="120" placeholder="Identificação da lista" required><button type="submit">Iniciar conferência →</button></form><button class="secondary" id="openCatalogBefore" type="button">▤ Gerenciar EANs e SKUs</button><small>Identificação registrada somente neste iPhone. Nome, Conta e Lista são obrigatórios; data e hora são automáticas.</small></section><div id="workspace" class="hidden"><div id="quickStatus" class="quick-status" role="status" aria-live="polite"></div><div class="flowbar" aria-label="Etapas da conferência"><span id="stepList">Lista</span><span id="stepOrder">Etiqueta</span><span id="stepProduct">Produto</span><span id="stepDone">Concluído</span></div><section class="card"><h2>1. Etiqueta do pedido</h2><button id="scanOrder">📷 Ler QR Code da etiqueta</button><details><summary>Inserir código manualmente (teste)</summary><textarea id="rawOrder" placeholder="P:...\nSku:...;Q:1"></textarea><button class="secondary" id="loadOrder">Carregar etiqueta</button></details><div id="orderInfo" class="notice">Aguardando leitura da etiqueta.</div><div id="orderProgress" class="order-progress hidden"><div class="order-progress-top"><strong id="orderProgressText">0 de 0 itens</strong><span id="orderProgressPercent">0%</span></div><div class="progress-track"><div class="progress-fill" id="orderProgressFill"></div></div></div><div id="items"></div></section><section class="card"><h2>2. Conferência do produto</h2><button id="scanProduct" disabled>📷 Ler QR Code ou EAN do produto</button><details><summary>Digitar SKU ou EAN manualmente (teste)</summary><input id="skuInput" placeholder="SKU ou EAN do produto" inputmode="text"><button class="secondary" id="checkSku">Conferir código</button></details><div id="feedback" class="notice" role="status" aria-live="polite">Primeiro leia a etiqueta do pedido.</div><button id="nextOrder" class="hidden" type="button">✅ Pedido completo — Ir para o próximo pedido?</button><button id="finishList" type="button">🏁 Finalizar conferência da lista</button><button class="secondary" id="reset">Descartar pedido atual</button></section><section id="cameraPanel" class="card hidden" aria-label="Leitor de QR Code">
  <div id="reader"></div>
  <div class="camera-topbar">
   <button type="button" id="closeCamera" class="camera-icon" aria-label="Fechar câmera" title="Fechar câmera">✕</button>
@@ -150,7 +150,7 @@ button:focus-visible{outline:3px solid #234;outline-offset:2px}
   <div class="catalog-sheet">
     <div class="catalog-head"><div><h2>Cadastro de EANs e SKUs</h2><small>Associação local de códigos de barras</small></div><button id="closeCatalog" type="button" class="catalog-exit" aria-label="Fechar cadastro">✕</button></div>
     <div class="catalog-pad">
-      <div class="catalog-stats" id="catalogStats">Nenhuma associação cadastrada.</div>
+      <div class="catalog-stats" id="catalogStats">Nenhuma associação cadastrada.</div><div id="catalogCorrectionNotice" class="catalog-correction hidden" role="status"></div>
       <form id="catalogForm" class="catalog-form">
         <label for="catalogEAN">EAN / UPC</label>
         <div class="catalog-inline"><input id="catalogEAN" inputmode="numeric" placeholder="8, 12 ou 13 dígitos" maxlength="24" required><button id="scanCatalogEAN" class="secondary" type="button">📷 Bipar</button></div>
@@ -178,7 +178,7 @@ button:focus-visible{outline:3px solid #234;outline-offset:2px}
     <div class="ean-review-badge">⚠ CONFERÊNCIA VISUAL DO EAN</div>
     <h2>Conferir variação</h2>
     <p id="eanReviewDescription">Confira a cor e o tamanho observados.</p>
-    <div class="ean-expected"><small>O pedido solicita</small><strong id="eanExpectedSKU"></strong></div>
+    <div class="ean-expected"><small>O pedido solicita</small><strong id="eanExpectedSKU"></strong></div><div id="eanExpectedWarning" class="catalog-alert hidden" role="alert"></div>
     <p><strong>Qual variação está fisicamente na sua mão?</strong></p>
     <div id="eanChoices" class="ean-choices"></div>
     <button id="eanConfirm" type="button" disabled>Confirmar variação observada</button>
@@ -494,13 +494,16 @@ async function scan(type){
 
 // === V24 CATÁLOGO EAN ↔ SKU ===
 const CATALOG_STORE='mm_bipador_catalog_v24';const CATALOG_LIMIT=15000;
-let catalog=[],eanPending=null,editingCatalogIndex=null;
+let catalog=[],eanPending=null,editingCatalogIndex=null,catalogCorrections=0;
 function cleanEAN(v){return String(v??'').trim().replace(/\s+/g,'')}
 function checkEAN(v){return /^(?:\d{8}|\d{12}|\d{13})$/.test(cleanEAN(v))}
+// Corrige somente um erro de grafia comprovado no cadastro desta loja.
+// Nunca usa correspondência aproximada para aprovar cores diferentes.
+function correctKnownColorTypo(value){return String(value||'').replace(/(^|[,;|])(\s*)PRERO(\s*)(?=$|[,;|])/gi,'$1$2Preto$3')}
 function safeCatalogRow(r){
  const ean=cleanEAN(r.ean),sku=norm(r.sku);
  if(!checkEAN(ean)||!sku||sku.length>100)throw Error('EAN deve ter 8, 12 ou 13 dígitos e SKU não pode estar vazio.');
- return {ean,sku,produto:String(r.produto||'').trim().slice(0,120),cor:String(r.cor||'').trim().slice(0,60),tamanho:String(r.tamanho||'').trim().slice(0,50),variacoes:String(r.variacoes||'').trim().slice(0,500)};
+ return {ean,sku,produto:String(r.produto||'').trim().slice(0,120),cor:correctKnownColorTypo(String(r.cor||'').trim().slice(0,60)),tamanho:String(r.tamanho||'').trim().slice(0,50),variacoes:correctKnownColorTypo(String(r.variacoes||'').trim().slice(0,500))};
 }
 function eanVariants(value){const v=cleanEAN(value);return v.length===12?[v,'0'+v]:v.length===13&&v[0]==='0'?[v,v.slice(1)]:[v]}
 function eanMatches(value){const variants=new Set(eanVariants(value));return catalog.filter(r=>variants.has(r.ean))}
@@ -523,7 +526,7 @@ function eanOptionRows(row,family){
  if(extra){
   // SKU completo cadastrado: a opção continua sendo o SKU completo.
   const title=[row.cor,row.tamanho].filter(Boolean).join(' · ')||extra.replace(/-/g,' ');
-  return [{sku:registered,title,produto:row.produto,source:'completo'}];
+  return [{sku:registered,title,produto:row.produto,source:'completo',registeredSize:true}];
  }
  // A cor principal e as outras variações formam UMA lista. Antes, quando
  // Variacoes estava preenchido, Cor era descartada e não aparecia ao conferir.
@@ -534,7 +537,30 @@ function eanOptionRows(row,family){
   seen.add(key);colors.push(c.trim());
  }
  if(!colors.length)return []; // sem cor, ainda não é possível comprovar a variação
- return colors.map(c=>({sku:base+'-'+skuKey(c)+(row.tamanho?'-'+skuKey(row.tamanho):''),title:[c,row.tamanho].filter(Boolean).join(' · '),produto:row.produto,source:'base'}));
+ return colors.map(c=>({sku:base+'-'+skuKey(c)+(row.tamanho?'-'+skuKey(row.tamanho):''),title:[c,row.tamanho].filter(Boolean).join(' · '),produto:row.produto,source:'base',registeredSize:!!row.tamanho}));
+}
+// Se o cadastro contém apenas cor, o tamanho da etiqueta é uma pista para
+// a conferência MANUAL: só expandimos tamanhos conhecidos e visíveis no pedido.
+// O EAN por si só nunca confirma a cor ou o tamanho.
+function expectedSizesForFamily(family,opts,items){
+ const prefix=skuKey(family)+'-';
+ const known=new Set(['ADULTO','INFANTIL','UNICO','PP','P','M','G','GG','XG','XGG','EG','G1','G2','G3','G4','XL','XXL','XXXL','U']);
+ const sizes=new Set();
+ for(const item of items){
+  const code=skuKey(item.sku);if(!code.startsWith(prefix))continue;
+  const tokens=code.slice(prefix.length).split('-').filter(Boolean);
+  for(const opt of opts){
+   if(opt.source!=='base'||opt.registeredSize)continue;
+   const color=skuKey(opt.sku).slice(prefix.length).split('-').filter(Boolean);
+   for(let i=0;i<=tokens.length-color.length;i++){
+    if(color.every((v,j)=>tokens[i+j]===v)){
+     const remaining=[...tokens.slice(0,i),...tokens.slice(i+color.length)];
+     if(remaining.length===1&&known.has(remaining[0]))sizes.add(remaining[0]);
+    }
+   }
+  }
+ }
+ return [...sizes];
 }
 function resolveEANOptions(rows,items){
  const families=[...new Set(items.map(i=>skuFamily(i.sku)))];
@@ -544,9 +570,19 @@ function resolveEANOptions(rows,items){
  for(const family of families){
   // Só mostramos os produtos da família do pedido, não SKUs de famílias estranhas no mesmo EAN.
   if(!anchors.some(r=>hasSkuPrefix(family,r.sku)))continue;
+  const familyOptions=[];
   rows.filter(r=>hasSkuPrefix(family,r.sku)).forEach(row=>eanOptionRows(row,family).forEach(opt=>{
-   if(!options.some(x=>equivalentSku(x.sku,opt.sku)))options.push(opt);
+   if(!familyOptions.some(x=>equivalentSku(x.sku,opt.sku)))familyOptions.push(opt);
   }));
+  const inferred=expectedSizesForFamily(family,familyOptions,items);
+  for(const opt of familyOptions){
+   const candidates=opt.source==='base'&&!opt.registeredSize&&inferred.length
+     ?inferred.map(sz=>({...opt,sku:opt.sku+'-'+sz,title:opt.title+' · '+sz,inferredSize:true}))
+     :[opt];
+   for(const candidate of candidates){
+    if(!options.some(x=>equivalentSku(x.sku,candidate.sku)))options.push(candidate);
+   }
+  }
  }
  return {matchedFamily:true,options,families};
 }
@@ -558,13 +594,25 @@ function readCatalog(){
  try{
   const data=JSON.parse(localStorage.getItem(CATALOG_STORE)||'[]');
   if(!Array.isArray(data))return [];
-  return data.slice(0,CATALOG_LIMIT).map(safeCatalogRow);
+  const raw=data.slice(0,CATALOG_LIMIT),clean=raw.map(safeCatalogRow);
+  const corrected=clean.filter((r,i)=>r.cor!==String(raw[i].cor||'').trim()||r.variacoes!==String(raw[i].variacoes||'').trim()).length;
+  if(corrected){
+   // Guarda cópia da lista anterior ANTES de corrigir qualquer dado persistido.
+   try{const backupKey=CATALOG_STORE+'_backup_original_v29';
+    if(!localStorage.getItem(backupKey))localStorage.setItem(backupKey,JSON.stringify(data));
+    localStorage.setItem(CATALOG_STORE,JSON.stringify(clean));
+    catalogCorrections=corrected;
+   }catch(e){console.warn('Não foi possível salvar a correção',e)}
+  }
+  return clean;
  }catch(e){console.warn('Catálogo local indisponível',e);return []}
 }
 catalog=readCatalog();
 function openCatalog(){ $('catalogPanel').classList.remove('hidden');renderCatalog() }
 function closeCatalog(){ $('catalogPanel').classList.add('hidden') }
 function renderCatalog(){
+ const notice=$('catalogCorrectionNotice');
+ if(notice){notice.classList.toggle('hidden',!catalogCorrections);if(catalogCorrections)notice.textContent='Grafia corrigida no catálogo: PRERO → PRETO ('+catalogCorrections+' associação/associações). O cadastro original foi preservado em backup local.';}
  const unique=new Set(catalog.map(x=>x.ean));
  const shared=new Set([...unique].filter(e=>new Set(eanMatches(e).flatMap(x=>eanOptionRows(x,skuFamily(x.sku))).map(x=>skuKey(x.sku))).size>1));
  $('catalogStats').textContent=catalog.length+' associações · '+unique.size+' códigos · '+shared.size+' EAN(s) compartilhado(s)';
@@ -635,6 +683,11 @@ function openEANReview(code,options,matches,families){
  eanPending={code,options,matches,selected:-1,orderId:order?.id};
  $('eanReviewDescription').textContent='EAN '+code+' · SKU base '+families.join(' / ')+'. Confira fisicamente a cor e o tamanho antes de selecionar.';
  $('eanExpectedSKU').textContent=matches.map(i=>i.sku).join(' ou ');
+ const missing=matches.filter(i=>!options.some(o=>equivalentSku(o.sku,i.sku)));
+ const warning=$('eanExpectedWarning');
+ warning.classList.toggle('hidden',!missing.length);
+ warning.textContent=missing.length?'Atenção: '+missing.map(i=>i.sku).join(', ')+' ainda não corresponde às opções cadastradas. Revise a grafia da cor e o tamanho em Gerenciar EANs e SKUs. A leitura não será aprovada com a variação errada.':'';
+ if(options.some(o=>o.inferredSize)) $('eanReviewDescription').textContent+=' O tamanho mostrado veio do pedido; confirme visualmente antes de selecionar.';
  $('eanChoices').innerHTML=options.map((r,i)=>'<label class="ean-choice"><input type="radio" name="eanVariation" value="'+i+'"><span>'+escapeHtml(r.title||r.sku)+'<small>'+escapeHtml([r.produto,'SKU: '+r.sku].filter(Boolean).join(' · '))+'</small></span></label>').join('')+'<label class="ean-choice ean-wrong"><input type="radio" name="eanVariation" value="'+options.length+'"><span>OUTRA COR OU TAMANHO<small>O produto observado não está nas variações cadastradas</small></span></label>';
  $('eanConfirm').disabled=true;$('eanReview').classList.remove('hidden');
 }
