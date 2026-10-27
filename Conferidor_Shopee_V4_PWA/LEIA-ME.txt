@@ -1,13 +1,12 @@
-BIPADOR UNIVERSAL V31 — OTIMIZAÇÃO DE LEITURA
+BIPADOR UNIVERSAL V32 — EAN SEM CADASTRO OBRIGATÓRIO DE VARIAÇÕES
 
-ATUALIZAÇÃO: envie index.html, sw.js, manifest.webmanifest, icon.svg e logo-multiplo-mix.png para a pasta já usada no GitHub Pages (Conferidor_Shopee_V4_PWA). Arquivos CSV e LEIA-ME não precisam ser enviados.
+ATUALIZAÇÃO: envie index.html, sw.js, manifest.webmanifest, icon.svg e logo-multiplo-mix.png para a mesma pasta do GitHub Pages. CSV e LEIA-ME são auxiliares.
 
-MELHORIAS V31
-• Janela quadrada para QR de pedidos e listas; janela horizontal mais ampla para produtos (QR/EAN).
-• 15 tentativas de reconhecimento por segundo para produtos (antes 12), sem forçar resolução da câmera.
-• Retomada rápida: após uma leitura de produto, o decodificador pausa e a câmera pode ser retomada sem reinicialização em até 20 segundos, caso ainda faltem produtos desse pedido.
-• A câmera é liberada ao concluir o pedido, ao sair do aplicativo ou após 20 segundos de inatividade.
-• Zoom e lanterna continuam disponíveis somente quando o Safari permitir.
-• Histórico, equivalências de SKU, validação visual de EAN, QR completo, sons e painel inalterados.
+1. Cada cor com EAN diferente: cadastre EAN + SKU COMPLETO para conferência automática. Não precisa cadastrar cores separadamente.
+2. Se o EAN tiver somente o SKU BASE (por exemplo WJ-211), não precisa cadastrar cores: ao escanear, o aplicativo exibe a variação exigida pela etiqueta e pede CONFIRMAÇÃO VISUAL explícita, antes de contabilizar. Essa conferência é registrada como visual, pois dois EANs diferentes vinculados à mesma família não provam qual é cada cor.
+3. Quando um EAN é compartilhado por várias cores, mantenha as variações do catálogo e selecione a cor observada.
+4. QR Code com SKU completo continua com conferência automática.
 
-IMPORTANTE: o desempenho real depende do foco e do modelo do iPhone. Valide primeiro com 5 pedidos em ambiente de teste. Faça backup do catálogo de EAN antes de atualizar. Não limpe os dados do Safari.
+Não apague o Safari: o catálogo e histórico ficam no armazenamento local. Faça backup do catálogo antes de atualizar.
+
+Valide primeiro no iPhone com pedidos de teste.

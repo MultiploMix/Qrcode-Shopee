@@ -135,7 +135,7 @@ button:focus-visible{outline:3px solid #234;outline-offset:2px}
 /* Enquadramento visual acompanha a prioridade do código, sem cobrir a imagem. */
 body.scanning-product #cameraPanel .camera-reticle{width:min(91vw,420px);aspect-ratio:1.35/1;top:47%}
 body.scanning-product #cameraPanel .camera-reticle i{width:29px;height:29px}
-</style></head><body><div id="scanVisual" class="hidden" role="status" aria-live="assertive"><div class="result"><div class="symbol" id="scanSymbol"></div><div class="status" id="scanStatus"></div><div class="detail" id="scanDetail"></div></div></div><header><div class="brand-head"><img src="logo-multiplo-mix.png" alt="Logo Múltiplo Mix Importados"><div>Bipador Universal<small>Conferência inteligente de pedidos</small><span class="app-version">V31</span></div></div></header><main><section id="identification" class="card"><h2>Identificação da conferência</h2><p class="form-sub">Preencha todos os campos para acessar o leitor de QR Code.</p><form id="identForm"><label class="form-label" for="operatorName">Nome</label><input id="operatorName" autocomplete="name" maxlength="100" placeholder="Nome do funcionário" required><label class="form-label">Data e hora</label><div class="notice" id="automaticDateTime" aria-live="polite"></div><small>Preenchidas automaticamente pelo horário do iPhone ao iniciar.</small><label class="form-label" for="accountName">Conta</label><input id="accountName" list="accounts" maxlength="100" placeholder="Selecione ou digite a conta" required><datalist id="accounts"></datalist><label class="form-label" for="listName">Lista</label><input id="listName" maxlength="120" placeholder="Identificação da lista" required><button type="submit">Iniciar conferência →</button></form><button class="secondary" id="openCatalogBefore" type="button">▤ Gerenciar EANs e SKUs</button><small>Identificação registrada somente neste iPhone. Nome, Conta e Lista são obrigatórios; data e hora são automáticas.</small></section><div id="workspace" class="hidden"><div id="quickStatus" class="quick-status" role="status" aria-live="polite"></div><div class="flowbar" aria-label="Etapas da conferência"><span id="stepList">Lista</span><span id="stepOrder">Etiqueta</span><span id="stepProduct">Produto</span><span id="stepDone">Concluído</span></div><section class="card"><h2>1. Etiqueta do pedido</h2><button id="scanOrder">📷 Ler QR Code da etiqueta</button><details><summary>Inserir código manualmente (teste)</summary><textarea id="rawOrder" placeholder="P:...\nSku:...;Q:1"></textarea><button class="secondary" id="loadOrder">Carregar etiqueta</button></details><div id="orderInfo" class="notice">Aguardando leitura da etiqueta.</div><div id="orderProgress" class="order-progress hidden"><div class="order-progress-top"><strong id="orderProgressText">0 de 0 itens</strong><span id="orderProgressPercent">0%</span></div><div class="progress-track"><div class="progress-fill" id="orderProgressFill"></div></div></div><div id="items"></div></section><section class="card"><h2>2. Conferência do produto</h2><button id="scanProduct" disabled>📷 Ler QR Code ou EAN do produto</button><details><summary>Digitar SKU ou EAN manualmente (teste)</summary><input id="skuInput" placeholder="SKU ou EAN do produto" inputmode="text"><button class="secondary" id="checkSku">Conferir código</button></details><div id="feedback" class="notice" role="status" aria-live="polite">Primeiro leia a etiqueta do pedido.</div><button id="nextOrder" class="hidden" type="button">✅ Pedido completo — Ir para o próximo pedido?</button><button id="finishList" type="button">🏁 Finalizar conferência da lista</button><button class="secondary" id="reset">Descartar pedido atual</button></section><section id="cameraPanel" class="card hidden" aria-label="Leitor de QR Code">
+</style></head><body><div id="scanVisual" class="hidden" role="status" aria-live="assertive"><div class="result"><div class="symbol" id="scanSymbol"></div><div class="status" id="scanStatus"></div><div class="detail" id="scanDetail"></div></div></div><header><div class="brand-head"><img src="logo-multiplo-mix.png" alt="Logo Múltiplo Mix Importados"><div>Bipador Universal<small>Conferência inteligente de pedidos</small><span class="app-version">V32</span></div></div></header><main><section id="identification" class="card"><h2>Identificação da conferência</h2><p class="form-sub">Preencha todos os campos para acessar o leitor de QR Code.</p><form id="identForm"><label class="form-label" for="operatorName">Nome</label><input id="operatorName" autocomplete="name" maxlength="100" placeholder="Nome do funcionário" required><label class="form-label">Data e hora</label><div class="notice" id="automaticDateTime" aria-live="polite"></div><small>Preenchidas automaticamente pelo horário do iPhone ao iniciar.</small><label class="form-label" for="accountName">Conta</label><input id="accountName" list="accounts" maxlength="100" placeholder="Selecione ou digite a conta" required><datalist id="accounts"></datalist><label class="form-label" for="listName">Lista</label><input id="listName" maxlength="120" placeholder="Identificação da lista" required><button type="submit">Iniciar conferência →</button></form><button class="secondary" id="openCatalogBefore" type="button">▤ Gerenciar EANs e SKUs</button><small>Identificação registrada somente neste iPhone. Nome, Conta e Lista são obrigatórios; data e hora são automáticas.</small></section><div id="workspace" class="hidden"><div id="quickStatus" class="quick-status" role="status" aria-live="polite"></div><div class="flowbar" aria-label="Etapas da conferência"><span id="stepList">Lista</span><span id="stepOrder">Etiqueta</span><span id="stepProduct">Produto</span><span id="stepDone">Concluído</span></div><section class="card"><h2>1. Etiqueta do pedido</h2><button id="scanOrder">📷 Ler QR Code da etiqueta</button><details><summary>Inserir código manualmente (teste)</summary><textarea id="rawOrder" placeholder="P:...\nSku:...;Q:1"></textarea><button class="secondary" id="loadOrder">Carregar etiqueta</button></details><div id="orderInfo" class="notice">Aguardando leitura da etiqueta.</div><div id="orderProgress" class="order-progress hidden"><div class="order-progress-top"><strong id="orderProgressText">0 de 0 itens</strong><span id="orderProgressPercent">0%</span></div><div class="progress-track"><div class="progress-fill" id="orderProgressFill"></div></div></div><div id="items"></div></section><section class="card"><h2>2. Conferência do produto</h2><button id="scanProduct" disabled>📷 Ler QR Code ou EAN do produto</button><details><summary>Digitar SKU ou EAN manualmente (teste)</summary><input id="skuInput" placeholder="SKU ou EAN do produto" inputmode="text"><button class="secondary" id="checkSku">Conferir código</button></details><div id="feedback" class="notice" role="status" aria-live="polite">Primeiro leia a etiqueta do pedido.</div><button id="nextOrder" class="hidden" type="button">✅ Pedido completo — Ir para o próximo pedido?</button><button id="finishList" type="button">🏁 Finalizar conferência da lista</button><button class="secondary" id="reset">Descartar pedido atual</button></section><section id="cameraPanel" class="card hidden" aria-label="Leitor de QR Code">
  <div id="reader"></div>
  <div class="camera-topbar">
   <button type="button" id="closeCamera" class="camera-icon" aria-label="Fechar câmera" title="Fechar câmera">✕</button>
@@ -162,10 +162,10 @@ body.scanning-product #cameraPanel .camera-reticle i{width:29px;height:29px}
       <form id="catalogForm" class="catalog-form">
         <label for="catalogEAN">EAN / UPC</label>
         <div class="catalog-inline"><input id="catalogEAN" inputmode="numeric" placeholder="8, 12 ou 13 dígitos" maxlength="24" required><button id="scanCatalogEAN" class="secondary" type="button">📷 Bipar</button></div>
-        <label for="catalogSKU">SKU do produto (família ou SKU completo)</label><input id="catalogSKU" placeholder="Ex.: WJ-2670" maxlength="100" required><p class="catalog-note">Para EAN compartilhado, use o SKU base (ex.: WJ-2670). Para EAN exclusivo, também pode usar o SKU completo.</p>
+        <label for="catalogSKU">SKU do produto (família ou SKU completo)</label><input id="catalogSKU" placeholder="Ex.: WJ-2670" maxlength="100" required><p class="catalog-note">EAN exclusivo por cor: cadastre o SKU completo para conferência automática. Se cadastrar apenas o SKU base, o aplicativo pedirá confirmação visual da variação do pedido, sem exigir cadastro de cores.</p>
         <label for="catalogName">Produto (opcional)</label><input id="catalogName" placeholder="Ex.: Meia feminina" maxlength="120">
         <div class="catalog-pair"><div><label for="catalogColor">Cor principal (também entra nas opções)</label><input id="catalogColor" placeholder="Ex.: Preto" maxlength="60"></div><div><label for="catalogSize">Tamanho (se aplicável)</label><input id="catalogSize" placeholder="Ex.: Adulto" maxlength="50"></div></div>
-        <label for="catalogVariants">Outras cores deste EAN (separadas por vírgula)</label><input id="catalogVariants" placeholder="Preto, Vermelho, Prata" maxlength="500"><p class="catalog-note">Exemplo: Cor principal PRETO + outras cores PRATA, ROSA, AZUL + tamanho ADULTO. Na embalagem, o EAN pede a escolha manual. QR Code do SKU completo continua automático.</p>
+        <label for="catalogVariants">Outras cores deste EAN (separadas por vírgula)</label><input id="catalogVariants" placeholder="Preto, Vermelho, Prata" maxlength="500"><p class="catalog-note">Preencha essas cores somente quando o mesmo EAN aparecer em várias variações. Se cada cor tiver EAN próprio, não precisa preencher estas opções: use o SKU completo para aprovação automática ou somente o SKU base para confirmação visual simples.</p>
         <div class="catalog-pair"><button id="catalogSubmit" type="submit">＋ Salvar associação</button><button id="catalogCancelEdit" type="button" class="secondary hidden">Cancelar edição</button></div>
       </form>
       <h3>Importar / Exportar</h3>
@@ -177,7 +177,7 @@ body.scanning-product #cameraPanel .camera-reticle i{width:29px;height:29px}
       <h3>Associações cadastradas</h3>
       <input type="search" id="catalogSearch" placeholder="Buscar EAN, SKU, produto ou cor">
       <div id="catalogList" class="catalog-list"></div>
-      <p class="catalog-note">O código EAN identifica a família, como WJ-2670. Quando houver várias variações, a escolha será visual e obrigatória. O QR Code com SKU completo continua sendo conferido diretamente. Os dados ficam neste navegador: faça backups.</p>
+      <p class="catalog-note">EAN único com SKU completo: aprovação automática. EAN apenas com SKU base: confirmação visual simples da variação esperada, sem exigir cadastro de cores. EAN compartilhado: escolha da variação. QR Code do produto continua com SKU completo. Os dados ficam neste navegador: faça backups.</p>
     </div>
   </div>
 </section>
@@ -191,7 +191,7 @@ body.scanning-product #cameraPanel .camera-reticle i{width:29px;height:29px}
     <div id="eanChoices" class="ean-choices"></div>
     <div id="eanSizeConfirmPanel" class="ean-size-confirm hidden" role="group" aria-label="Confirmação do tamanho físico">
       <label><input id="eanSizeConfirm" type="checkbox"><span id="eanSizeConfirmText">Conferi o tamanho no produto.</span></label>
-      <small>O EAN não identifica o tamanho. Confira a embalagem ou a peça antes de marcar.</small>
+      <small id="eanConfirmHint">O EAN não identifica o tamanho. Confira a embalagem ou a peça antes de marcar.</small>
     </div>
     <button id="eanConfirm" type="button" disabled>Confirmar variação observada</button>
     <button id="eanCancel" type="button" class="secondary">Cancelar sem contabilizar</button>
@@ -740,7 +740,10 @@ function importCatalogCSV(text){
 // A conferência de QR continua exigindo o SKU completo.
 const EAN_SIZE_WORDS=new Set(['ADULTO','INFANTIL','UNICO','PP','P','M','G','GG','XG','XGG','EG','G1','G2','G3','G4','XL','XXL','XXXL','U']);
 function eanVisualMatch(candidate,item){
- if(equivalentSku(candidate.sku,item.sku))return {item,missingSize:null};
+ // EAN cadastrado somente na família, sem cores: nunca deduzir a variação pelo código.
+ // Uma escolha explícita da variação solicitada e um checkbox de inspeção física são obrigatórios.
+ if(candidate.source==='pedido-visual')return equivalentSku(candidate.sku,item.sku)?{item,missingSize:null,visualOnly:true}:null;
+ if(skuKey(candidate.sku)===skuKey(item.sku)||equivalentSku(candidate.sku,item.sku))return {item,missingSize:null};
  if(candidate.source!=='base'||candidate.registeredSize)return null;
  const expected=skuKey(item.sku).split('-').filter(Boolean);
  const family=skuFamily(item.sku);
@@ -762,12 +765,18 @@ function updateEANConfirmation(){
  const opt=eanPending.options[eanPending.selected];
  const matches=eanEligibleMatches(opt,eanPending.matches);
  const needsSize=!!(opt&&matches.length===1&&matches[0].missingSize);
+ const needsVisual=!!(opt&&matches.length===1&&matches[0].visualOnly);
+ const needsCheck=needsSize||needsVisual;
  const panel=$('eanSizeConfirmPanel');
- panel.classList.toggle('hidden',!needsSize);
- if(needsSize)$('eanSizeConfirmText').textContent='Confirmei fisicamente o tamanho: '+matches[0].missingSize;
- // Erros continuam selecionáveis para produzir alerta negativo, mas uma
- // escolha correta que exige tamanho não pode ser aprovada sem confirmação.
- $('eanConfirm').disabled=eanPending.selected<0||(needsSize&&!$('eanSizeConfirm').checked);
+ panel.classList.toggle('hidden',!needsCheck);
+ if(needsVisual){
+  $('eanSizeConfirmText').textContent='Conferi fisicamente a variação: '+matches[0].item.sku;
+  $('eanConfirmHint').textContent='O EAN está cadastrado somente com o SKU base. Ele não comprova a cor ou o tamanho; confirme olhando o produto.';
+ }else if(needsSize){
+  $('eanSizeConfirmText').textContent='Confirmei fisicamente o tamanho: '+matches[0].missingSize;
+  $('eanConfirmHint').textContent='O EAN não identifica o tamanho. Confira a embalagem ou a peça antes de marcar.';
+ }
+ $('eanConfirm').disabled=eanPending.selected<0||(needsCheck&&!$('eanSizeConfirm').checked);
 }
 function choosePendingEAN(index){
  if(!eanPending)return;
@@ -778,7 +787,7 @@ function choosePendingEAN(index){
 }
 function openEANReview(code,options,matches,families){
  eanPending={code,options,matches,selected:-1,orderId:order?.id};
- $('eanReviewDescription').textContent='EAN '+code+' · SKU base '+families.join(' / ')+'. Confira fisicamente a cor e o tamanho antes de selecionar.';
+ $('eanReviewDescription').textContent=options.some(o=>o.source==='pedido-visual')?'EAN '+code+' cadastrado com SKU base '+families.join(' / ')+'. Este código não comprova a cor. Compare fisicamente o produto com a variação do pedido e confirme.':'EAN '+code+' · SKU base '+families.join(' / ')+'. Confira fisicamente a cor e o tamanho antes de selecionar.';
  $('eanExpectedSKU').textContent=matches.map(i=>i.sku).join(' ou ');
  const missing=matches.filter(i=>!options.some(o=>eanVisualMatch(o,i)));
  const warning=$('eanExpectedWarning');
@@ -786,7 +795,7 @@ function openEANReview(code,options,matches,families){
  warning.textContent=missing.length?'Atenção: '+missing.map(i=>i.sku).join(', ')+' ainda não corresponde às opções cadastradas. Revise a grafia da cor e o tamanho em Gerenciar EANs e SKUs. A leitura não será aprovada com a variação errada.':'';
  if(options.some(o=>o.source==='base'&&!o.registeredSize)) $('eanReviewDescription').textContent+=' Se o cadastro não informar tamanho, confirme-o fisicamente na próxima etapa.';
  $('eanChoices').innerHTML=options.map((r,i)=>'<label class="ean-choice"><input type="radio" name="eanVariation" value="'+i+'"><span>'+escapeHtml(r.title||r.sku)+'<small>'+escapeHtml([r.produto,'SKU: '+r.sku].filter(Boolean).join(' · '))+'</small></span></label>').join('')+'<label class="ean-choice ean-wrong"><input type="radio" name="eanVariation" value="'+options.length+'"><span>OUTRA COR OU TAMANHO<small>O produto observado não está nas variações cadastradas</small></span></label>';
- $('eanSizeConfirm').checked=false;$('eanSizeConfirmPanel').classList.add('hidden');$('eanConfirm').disabled=true;$('eanReview').classList.remove('hidden');
+ $('eanSizeConfirm').checked=false;$('eanSizeConfirmPanel').classList.add('hidden');$('eanConfirm').disabled=true;$('eanConfirm').textContent=options.some(o=>o.source==='pedido-visual')?'Confirmar após inspeção visual':'Confirmar variação observada';$('eanReview').classList.remove('hidden');
 }
 function closeEANReview(){eanPending=null;$('eanReview').classList.add('hidden')}
 function processEAN(raw){
@@ -796,11 +805,26 @@ function processEAN(raw){
  if(!rows.length){showMessage('⛔ EAN NÃO CADASTRADO — '+code+'. Cadastre a associação no gerenciamento.','danger');logScan('EAN',code,'DESCONHECIDO');signal(false,'EAN não cadastrado');return}
  const result=resolveEANOptions(rows,order.items);
  if(!result.matchedFamily){showMessage('⛔ PRODUTO ERRADO — EAN '+code+' não pertence à família de SKU deste pedido.','danger');logScan('EAN',code,'ERRO');signal(false,'EAN de outro produto');return}
- if(!result.options.length){showMessage('⛔ CADASTRO INCOMPLETO — o EAN '+code+' está ligado ao SKU base, mas faltam cores/tamanhos. Preencha Cor, Tamanho ou Variacoes no Gerenciar EANs e SKUs.','danger');logScan('EAN',code,'SEM VARIAÇÕES');signal(false,'Cadastre as variações');return}
- // Só é automático quando o EAN possui UMA associação com SKU completo e sem prefixo-base.
- // Se compartilha o código ou se foi cadastrado por SKU base, sempre exige confirmação visual.
+ // Sem variações cadastradas: o EAN confirma apenas a família, e a variação
+ // completa é verificada visualmente, SEM exigir cadastrar todas as cores.
+ // Importante: se dois EANs diferentes forem associados ao mesmo SKU base,
+ // seus valores NÃO revelam qual cor cada código representa.
+ if(!result.options.length){
+  const genericRows=rows.filter(r=>skuKey(r.sku)===skuFamily(r.sku)&&order.items.some(i=>hasSkuPrefix(r.sku,i.sku)));
+  const genericOptions=[];
+  for(const item of order.items){
+   const row=genericRows.find(r=>hasSkuPrefix(r.sku,item.sku));
+   if(!row)continue;
+   const suffix=skuKey(item.sku).slice(skuKey(row.sku).length).replace(/^-/, '');
+   genericOptions.push({sku:item.sku,title:suffix.replace(/-/g,' · ')||item.sku,produto:row.produto,source:'pedido-visual',registeredSize:false});
+  }
+  if(!genericOptions.length){showMessage('⛔ EAN não identifica uma variação deste pedido. Revise o SKU cadastrado.','danger');logScan('EAN',code,'SEM CORRESPONDÊNCIA');signal(false,'EAN não corresponde');return}
+  openEANReview(code,genericOptions,order.items.filter(i=>genericRows.some(r=>hasSkuPrefix(r.sku,i.sku))),result.families);
+  return;
+ }
+ // Aprovação automática somente com associação inequívoca ao SKU COMPLETO.
  const single=rows.length===1&&result.options.length===1&&result.options[0].source==='completo';
- if(single){const sku=result.options[0].sku;if(order.items.some(i=>equivalentSku(i.sku,sku))){check(sku,'ean');return}}
+ if(single){const sku=result.options[0].sku;const item=order.items.find(i=>skuKey(i.sku)===skuKey(sku)||equivalentSku(i.sku,sku));if(item){check(item.sku,'ean');return}showMessage('⛔ PRODUTO ERRADO — este EAN está cadastrado para '+sku+', mas o pedido solicita outro SKU.','danger');logScan('EAN',code,'SKU DIVERGENTE');signal(false,'EAN de outra variação');return}
  openEANReview(code,result.options,order.items.filter(i=>result.families.some(f=>hasSkuPrefix(f,i.sku))),result.families);
 }
 $('eanChoices').addEventListener('change',e=>{if(e.target.name==='eanVariation')choosePendingEAN(Number(e.target.value))});
@@ -812,10 +836,10 @@ $('eanConfirm').onclick=()=>{
  if(!order||order.id!==orderId){closeEANReview();showMessage('Pedido mudou. Leia o produto novamente.','danger');return}
  const candidate=options[selected];
  const matches=eanEligibleMatches(candidate,order.items);
- const sizeConfirmationRequired=matches.length===1&&!!matches[0].missingSize;
- const sizeConfirmed=$('eanSizeConfirm').checked;
- if(sizeConfirmationRequired&&!sizeConfirmed){
-  showMessage('⚠ Confira e marque o tamanho físico antes de confirmar.','danger');return;
+ const visualConfirmationRequired=matches.length===1&&!!(matches[0].missingSize||matches[0].visualOnly);
+ const visualConfirmed=$('eanSizeConfirm').checked;
+ if(visualConfirmationRequired&&!visualConfirmed){
+  showMessage('⚠ Confira fisicamente a cor e o tamanho antes de confirmar.','danger');return;
  }
  closeEANReview();
  if(!candidate){showMessage('⛔ VARIAÇÃO INCORRETA — produto não corresponde às opções cadastradas.','danger');logScan('EAN VISUAL',code+' → OUTRA VARIAÇÃO','ERRO');signal(false,'Cor ou tamanho incorreto');return}
