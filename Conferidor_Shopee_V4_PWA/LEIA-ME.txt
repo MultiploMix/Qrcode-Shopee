@@ -1,23 +1,13 @@
-BIPADOR UNIVERSAL V30 — COR E TAMANHO POR EAN
+BIPADOR UNIVERSAL V31 — OTIMIZAÇÃO DE LEITURA
 
-Envie para a pasta que já hospeda o aplicativo no GitHub Pages:
-index.html, sw.js, manifest.webmanifest, icon.svg e logo-multiplo-mix.png.
-O modelo CSV e este LEIA-ME não precisam ser enviados.
+ATUALIZAÇÃO: envie index.html, sw.js, manifest.webmanifest, icon.svg e logo-multiplo-mix.png para a pasta já usada no GitHub Pages (Conferidor_Shopee_V4_PWA). Arquivos CSV e LEIA-ME não precisam ser enviados.
 
-CORREÇÃO V30
-EAN ligado à família WJ-2670, com a cor PRETO cadastrada, é elegível
-para o pedido WJ-2670-PRETO-ADULTO. Quando o cadastro não informa o tamanho,
-o aplicativo exige que o funcionário MARQUE a confirmação visual de
-ADULTO antes de aprovar. A escolha de outra cor ou tamanho continua bloqueada.
-O EAN não identifica sozinho a cor nem o tamanho; a responsabilidade pela
-conferência visual fica registrada no histórico.
+MELHORIAS V31
+• Janela quadrada para QR de pedidos e listas; janela horizontal mais ampla para produtos (QR/EAN).
+• 15 tentativas de reconhecimento por segundo para produtos (antes 12), sem forçar resolução da câmera.
+• Retomada rápida: após uma leitura de produto, o decodificador pausa e a câmera pode ser retomada sem reinicialização em até 20 segundos, caso ainda faltem produtos desse pedido.
+• A câmera é liberada ao concluir o pedido, ao sair do aplicativo ou após 20 segundos de inatividade.
+• Zoom e lanterna continuam disponíveis somente quando o Safari permitir.
+• Histórico, equivalências de SKU, validação visual de EAN, QR completo, sons e painel inalterados.
 
-QR CODE: continua exigindo o SKU completo, inclusive cor e tamanho.
-
-CONSERVAÇÃO DOS DADOS
-Não limpe os dados do Safari. Faça backup do catálogo de EANs e da lista
-antes de atualizar. O catálogo existente usa a mesma chave de armazenamento.
-
-TESTES
-Validado em navegador automatizado; foco, câmera e áudio necessitam de
-teste físico no iPhone antes de utilizar em todos os pedidos.
+IMPORTANTE: o desempenho real depende do foco e do modelo do iPhone. Valide primeiro com 5 pedidos em ambiente de teste. Faça backup do catálogo de EAN antes de atualizar. Não limpe os dados do Safari.
