@@ -1,4 +1,4 @@
-BIPADOR UNIVERSAL V26 — EAN POR FAMÍLIA E QR POR SKU COMPLETO
+BIPADOR UNIVERSAL V28 — COR PRINCIPAL E OUTRAS VARIAÇÕES
 
 Envie para a MESMA pasta do GitHub: index.html, sw.js, manifest.webmanifest, icon.svg, logo-multiplo-mix.png.
 O CSV e este LEIA-ME.txt não precisam ser enviados ao GitHub.
@@ -15,4 +15,7 @@ Ao ler EAN, o app reconhece WJ-2670 e apresenta as variações. Só contabiliza 
 Atenção: cadastrar uma variação que inclui tamanho exige o preenchimento do tamanho correto.
 Para produtos com QR de SKU completo, a conferência continua automática e exata.
 
-IMPORTANTE: faça backup do catálogo antes de apagar dados do Safari. A V26 não migra dados para servidor.
+IMPORTANTE: faça backup do catálogo antes de apagar dados do Safari. A V28 não migra dados para servidor.
+
+CORREÇÃO V28: a cor informada em Cor e as cores informadas em Outras cores aparecem JUNTAS na escolha visual, sem repetições. Exemplo: Cor=PRETO; Outras cores=PRATA, ROSA, AZUL.
+O campo Tamanho continua obrigatório se ele compõe o SKU completo da etiqueta (como ADULTO). Corrija eventuais erros de digitação nas variações (ex.: PRERO deve ser PRETO).
