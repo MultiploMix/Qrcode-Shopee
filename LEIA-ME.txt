@@ -1,0 +1,23 @@
+BIPADOR UNIVERSAL V30 — COR E TAMANHO POR EAN
+
+Envie para a pasta que já hospeda o aplicativo no GitHub Pages:
+index.html, sw.js, manifest.webmanifest, icon.svg e logo-multiplo-mix.png.
+O modelo CSV e este LEIA-ME não precisam ser enviados.
+
+CORREÇÃO V30
+EAN ligado à família WJ-2670, com a cor PRETO cadastrada, é elegível
+para o pedido WJ-2670-PRETO-ADULTO. Quando o cadastro não informa o tamanho,
+o aplicativo exige que o funcionário MARQUE a confirmação visual de
+ADULTO antes de aprovar. A escolha de outra cor ou tamanho continua bloqueada.
+O EAN não identifica sozinho a cor nem o tamanho; a responsabilidade pela
+conferência visual fica registrada no histórico.
+
+QR CODE: continua exigindo o SKU completo, inclusive cor e tamanho.
+
+CONSERVAÇÃO DOS DADOS
+Não limpe os dados do Safari. Faça backup do catálogo de EANs e da lista
+antes de atualizar. O catálogo existente usa a mesma chave de armazenamento.
+
+TESTES
+Validado em navegador automatizado; foco, câmera e áudio necessitam de
+teste físico no iPhone antes de utilizar em todos os pedidos.
