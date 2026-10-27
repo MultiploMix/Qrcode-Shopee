@@ -585,7 +585,7 @@ function openEANReview(code,rows,matches){
  eanPending={code,rows,matches,selected:-1,orderId:order?.id};
  $('eanReviewDescription').textContent='EAN '+code+' identifica '+rows.length+' variações cadastradas. Observe o produto antes de escolher.';
  $('eanExpectedSKU').textContent=matches.map(i=>i.sku).join(' ou ');
- $('eanChoices').innerHTML=rows.map((r,i)=>'<label class="ean-choice"><input type="radio" name="eanVariation" value="'+i+'"><span>'+escapeHtml(r.sku)+'<small>'+escapeHtml([r.produto,r.cor,r.tamanho].filter(Boolean).join(' · '))+'</small></span></label>').join('');
+ $('eanChoices').innerHTML=rows.map((r,i)=>{const titulo=[r.cor,r.tamanho].filter(Boolean).join(' · ')||r.sku;const detalhe=[r.produto,r.sku?('SKU: '+r.sku):''].filter(Boolean).join(' · ');return '<label class="ean-choice"><input type="radio" name="eanVariation" value="'+i+'"><span>'+escapeHtml(titulo)+'<small>'+escapeHtml(detalhe)+'</small></span></label>';}).join('');
  $('eanConfirm').disabled=true;$('eanReview').classList.remove('hidden');
 }
 function closeEANReview(){eanPending=null;$('eanReview').classList.add('hidden')}
