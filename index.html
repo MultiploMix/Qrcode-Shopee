@@ -278,7 +278,7 @@ button.finish-quick{background:#243148!important;color:#fff!important;border-rad
 #v68LabelCue strong{font-size:clamp(20px,5vw,26px);font-weight:900;letter-spacing:.01em}
 #v68LabelCue small{font-size:clamp(15px,4vw,19px);font-weight:750;letter-spacing:.015em}
 @media(prefers-reduced-motion:reduce){#v68LabelCue{transition:none}}
-#eanSizeConfirmPanel,#eanConfirm,#sharedEANCheckPanel,#sharedEANConfirm{display:none!important}#eanChoices .ean-choice,#sharedEANChoices .ean-choice{min-height:64px;cursor:pointer;touch-action:manipulation}</style></head><body><div id="scanVisual" class="hidden" role="status" aria-live="assertive"><div class="result"><div class="symbol" id="scanSymbol"></div><div class="status" id="scanStatus"></div><div class="detail" id="scanDetail"></div></div></div><header><div class="brand-head"><img src="logo-multiplo-mix.png" alt="Logo Múltiplo Mix Importados"><div>Bipador Universal<small>Conferência de pedidos</small><span class="app-version">V108 · CONFERÊNCIA POR EAN E SKU</span></div></div></header><main><section class="card" id="identification"><h2>Iniciar conferência</h2><p class="form-sub">Preencha seus dados para começar.</p><form id="identForm"><label class="form-label" for="operatorName">Nome</label><input autocomplete="name" id="operatorName" maxlength="100" placeholder="Nome do funcionário" required=""/><label class="form-label">Data e hora automáticas</label><div aria-live="polite" class="notice date-readonly" id="automaticDateTime"></div><label class="form-label" for="accountName">Conta</label><input id="accountName" list="accounts" maxlength="100" placeholder="Selecione ou digite a conta" required=""/><datalist id="accounts"></datalist><label class="form-label" for="listName">Lista</label><input id="listName" maxlength="120" placeholder="Identificação da lista" required=""/><button type="submit">Iniciar conferência →</button></form><button class="secondary" id="openCatalogBefore" type="button">⚙ Gerenciar EANs (responsável)</button></section><div class="hidden" id="workspace"><div aria-live="polite" class="quick-status small-status" id="quickStatus" role="status"></div><section class="card operator-card" id="operatorCard">
+#eanSizeConfirmPanel,#eanConfirm,#sharedEANCheckPanel,#sharedEANConfirm{display:none!important}#eanChoices .ean-choice,#sharedEANChoices .ean-choice{min-height:64px;cursor:pointer;touch-action:manipulation}</style></head><body><div id="scanVisual" class="hidden" role="status" aria-live="assertive"><div class="result"><div class="symbol" id="scanSymbol"></div><div class="status" id="scanStatus"></div><div class="detail" id="scanDetail"></div></div></div><header><div class="brand-head"><img src="logo-multiplo-mix.png" alt="Logo Múltiplo Mix Importados"><div>Bipador Universal<small>Conferência de pedidos</small><span class="app-version">V109 · CONFERÊNCIA POR EAN E SKU</span></div></div></header><main><section class="card" id="identification"><h2>Iniciar conferência</h2><p class="form-sub">Preencha seus dados para começar.</p><form id="identForm"><label class="form-label" for="operatorName">Nome</label><input autocomplete="name" id="operatorName" maxlength="100" placeholder="Nome do funcionário" required=""/><label class="form-label">Data e hora automáticas</label><div aria-live="polite" class="notice date-readonly" id="automaticDateTime"></div><label class="form-label" for="accountName">Conta</label><input id="accountName" list="accounts" maxlength="100" placeholder="Selecione ou digite a conta" required=""/><datalist id="accounts"></datalist><label class="form-label" for="listName">Lista</label><input id="listName" maxlength="120" placeholder="Identificação da lista" required=""/><button type="submit">Iniciar conferência →</button></form><button class="secondary" id="openCatalogBefore" type="button">⚙ Gerenciar EANs (responsável)</button></section><div class="hidden" id="workspace"><div aria-live="polite" class="quick-status small-status" id="quickStatus" role="status"></div><section class="card operator-card" id="operatorCard">
 <div class="operator-topbar"><div class="operator-kicker"><span class="live-dot"></span><span id="miniSession">Conferência em andamento</span></div><button id="discardQuick" class="discard-quick hidden" type="button" aria-label="Descartar pedido atual">✕ Descartar pedido</button></div>
 <h2 class="stage-title" id="stageTitle">Leia a etiqueta do pedido</h2>
 <p class="stage-help" id="stageHelp">Aponte a câmera para o QR Code da etiqueta.</p>
@@ -2226,6 +2226,34 @@ function cameraCapabilities(reader,track){
  try{return reader?.getRunningTrackCapabilities?.()||track?.getCapabilities?.()||{}}
  catch(e){try{return track?.getCapabilities?.()||{}}catch(e){return {}}}
 }
+async function improveCameraCapture(track,caps){
+ if(!track?.applyConstraints||!track.getSettings||!track.getConstraints)return;
+ try{
+  const current=track.getSettings();
+  const previous=track.getConstraints();
+  const preferred={...previous};
+  const portrait=current.height>current.width;
+  for(const [axis,target] of [['width',portrait?1080:1920],['height',portrait?1920:1080]]){
+   const maximum=caps[axis]?.max;
+   const ideal=Math.min(target,maximum);
+   if(Number.isFinite(current[axis])&&Number.isFinite(ideal)&&ideal>current[axis]&&previous[axis]?.exact===undefined){
+    const limit=previous[axis]?.max??maximum;
+    const bounded=Math.min(ideal,limit);
+    if(bounded>current[axis]){
+     const existing=typeof previous[axis]==='object'?previous[axis]:{};
+     preferred[axis]={...existing,ideal:bounded};
+    }
+   }
+  }
+  if(Array.isArray(caps.focusMode)&&caps.focusMode.includes('continuous')&&
+     current.focusMode!=='continuous'&&previous.focusMode?.exact===undefined)
+   preferred.focusMode={ideal:'continuous'};
+  if(Object.keys(preferred).some(key=>preferred[key]!==previous[key]))
+   await track.applyConstraints(preferred);
+ }catch(error){
+  // A câmera já está ativa. Uma preferência recusada preserva a captura original.
+ }
+}
 function configureCameraZoom(reader,track,caps){
  const zoom=caps?.zoom;
  if(!zoom||!Number.isFinite(Number(zoom.min))||!Number.isFinite(Number(zoom.max))||Number(zoom.max)<=Number(zoom.min))return;
@@ -2425,9 +2453,11 @@ async function scan(type,usarLeitorPadrao=false){
    }finally{busy=false;v70WakeReader(reader,token,Math.max(65,v66CooldownUntil-Date.now()+65));}
   },()=>{});
   if(token!==scanGeneration||scanning!==reader){try{await reader.stop()}catch(e){}try{reader.clear()}catch(e){}return;}
-  // Não usar outro getUserMedia, getCameras, resolução forçada ou foco avançado.
+  // Ajuste opcional do stream atual, sem solicitar outra câmera.
   activeVideoTrack=cameraTrack(reader);
   const caps=cameraCapabilities(reader,activeVideoTrack);
+  await improveCameraCapture(activeVideoTrack,caps);
+  if(token!==scanGeneration||scanning!==reader)return;
   configureCameraZoom(reader,activeVideoTrack,caps);
   const torchBtn=$('torchButton');
   torchBtn.onclick=toggleTorch;
